@@ -64,6 +64,13 @@ docker run --rm -v $(pwd)/your-project:/project d3fk/tailwindcss -i ./src/tailwi
 
 For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
 
+## Upgrading Tailwind CSS to its last version
+
+Simply pulling the latest tag again will get you our latest build of the d3fk/tailwindcss container image:
+`docker pull d3fk/tailwindcss:latest`
+
+In case you need an updated version ahead of our next update you can still rebuild your own image from the Dockerfile.
+
 ## License
 
 The content of this [GitHub code repository](https://github.com/Angatar/tailwindcss) is provided under **MIT** licence
