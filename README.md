@@ -21,7 +21,7 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 ***"d3fk/tailwindcss:latest" and "d3fk/tailwindcss:stable" are both provided as multi-arch images.***
 
-*These multi-arch images will fit most of architectures:*
+*These multi-arch images will fit with the following architectures:*
 
 - *linux/amd64*
 - *linux/arm/v6*
@@ -39,22 +39,25 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 ## Basic usage
 
 ```sh
-docker run --rm -it -v $(pwd)/your-project/:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css
+docker run --rm -v $(pwd)/your-project/:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css
 ```
 
 ## Make it watch for changes
 
-As the files of the project are mounted into the container the --poll option has to be use in combination with the --watch option to make the container watch properly (by polling instead of using filesystem events) for any change in your source files that would need to rebuild the output of your tailwind css file.
+As the files of the project are mounted into the container the `--poll` option has to be use in combination with the `--watch` option to make the container watch properly (by polling instead of using filesystem events) for any change in your source files that would require the output of your tailwind css file to be rebuilt.
 
 ```sh
-docker run --rm -it -v $(pwd)/your-project/:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --poll --watch
+docker run --rm -d --name tailwindcss-builder -v $(pwd)/your-project:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --poll --watch
 ```
+
+Note: we are suggesting to use `docker run -d` to let it watch in background so that you can still use your current console and watch the build processes with `docker logs tailwindcss-builder` or stop & remove the container with `docker stop tailwindcss-builder`.
+
 
 ## Optimizing for Production
 
-You can minify your output CSS by using the --minify flag
+You can minify your output CSS by using the `--minify` flag
 ```sh
-docker run --rm -it -v $(pwd)/your-project/:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --minify
+docker run --rm -v $(pwd)/your-project:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --minify
 ```
 
 ## Documentation
@@ -64,4 +67,4 @@ For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
 ## License
 
 The content of this [GitHub code repository](https://github.com/Angatar/tailwindcss) is provided under **MIT** licence
-[![GitHub license](https://img.shields.io/github/license/Angatar/tailwindcss)](https://github.com/Angatar/tailwindcss/blob/master/LICENSE), as well as the embedded **tailwindcss CLI** as stated in its official repository https://github.com/tailwindlabs/tailwindcss
+[![GitHub license](https://img.shields.io/github/license/Angatar/tailwindcss)](https://github.com/Angatar/tailwindcss/blob/master/LICENSE), as well as the embedded **tailwindcss CLI**, as stated in the Tailwind CSS official repository https://github.com/tailwindlabs/tailwindcss
