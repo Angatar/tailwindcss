@@ -39,25 +39,38 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 ## Basic usage
 
 ```sh
-docker run --rm -v $(pwd)/your-project/:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css
+docker run --rm -v $(pwd)/YOUR_PROJECT_DIR:/project \
+       d3fk/tailwindcss \
+       -i SRC_PATH/tailwind-input.css \
+       -o CSS_PATH/tailwind-output.css
 ```
+
+The container has `/project` for default `WORKDIR` so that the `SRC_PATH`(for your Tailwind CSS input file) and `CSS_PATH`(for your Tailwind CSS build output file) have to be relative to the `/project` directory which corresponds, here, to your local `YOUR_PROJECT_DIR` directory.
 
 ## Make it watch for changes
 
-As the files of the project are mounted into the container the `--poll` option has to be use in combination with the `--watch` option to make the container watch properly (by polling instead of using filesystem events) for any change in your source files that would require the output of your tailwind css file to be rebuilt.
+As the files of the project are mounted into the container the `--poll` option has to be used in combination with the `--watch` option to make the container watch properly (by polling instead of using filesystem events) for any change in your source files that would require the output of your tailwind css file to be rebuilt.
 
 ```sh
-docker run --rm -d --name tailwindcss-builder -v $(pwd)/your-project:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --poll --watch
+docker run --rm -d --name tailwindcss-builder -v $(pwd)/YOUR_PROJECT_DIR:/project \
+       d3fk/tailwindcss \
+       -i SRC_PATH/tailwind-input.css \
+       -o CSS_PATH/tailwind-output.css \
+       --poll --watch
 ```
 
-Note: we are suggesting to use `docker run -d` to let it watch in background so that you can still use your current console and watch the build processes with `docker logs tailwindcss-builder` or stop & remove the container with `docker stop tailwindcss-builder`.
+Note: we are suggesting to use `docker run -d` to let it watch in background so that you can still use your current console and watch the build processes with `docker logs tailwindcss-builder` .You can then stop & remove (`--rm`) the container with `docker stop tailwindcss-builder`
 
 
 ## Optimizing for Production
 
 You can minify your output CSS by using the `--minify` flag
 ```sh
-docker run --rm -v $(pwd)/your-project:/project d3fk/tailwindcss -i ./src/tailwind-input.css -o ./css/tailwind-output.css --minify
+docker run --rm -v $(pwd)/YOUR_PROJECT_DIR:/project \
+       d3fk/tailwindcss \
+       -i SRC_PATH/tailwind-input.css \
+       -o CSS_PATH/tailwind-output.css \
+       --minify
 ```
 
 ## Documentation
@@ -67,6 +80,7 @@ For full documentation, visit [tailwindcss.com](https://tailwindcss.com/).
 ## Upgrading Tailwind CSS to its last version
 
 Simply pulling the latest tag again will get you our latest build of the d3fk/tailwindcss container image:
+
 `docker pull d3fk/tailwindcss:latest`
 
 In case you need an updated version ahead of our next update you can still rebuild your own image from the Dockerfile.
