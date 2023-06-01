@@ -31,11 +31,11 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 #### --- Latest ---
 
-- **d3fk/tailwindcss:latest** tag provides you with the last version of tailwindcss available: the container is rebuilt on a regular basis.
+- **d3fk/tailwindcss:latest** tag provides you with the last version of tailwindcss available: this container image is rebuilt on a regular basis.
 
 #### --- Stable ---
 
-- **d3fk/tailwindcss:stable** tag provides you with a fixed version of tailwind CSS (v3.3.2). The container won't be rebuilt to **avoid any possible change** in its behaviour.
+- **d3fk/tailwindcss:stable** tag provides you with a fixed version of tailwind CSS (v3.3.2): this container:stable image won't be rebuilt to **avoid any possible change** in its behaviour.
 
 ## Basic usage
 
