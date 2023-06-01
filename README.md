@@ -1,12 +1,13 @@
 [![Docker Pulls](https://badgen.net/docker/pulls/d3fk/tailwindcss?icon=docker&label=pulls)](https://hub.docker.com/r/d3fk/tailwindcss/tags) [![Docker Image Size](https://badgen.net/docker/size/d3fk/tailwindcss/latest?icon=docker&label=image%20size)](https://hub.docker.com/r/d3fk/tailwindcss/tags) [![Docker build](https://img.shields.io/docker/cloud/automated/d3fk/tailwindcss?label=build&logo=docker)](https://hub.docker.com/r/d3fk/tailwindcss/tags) [![Build status](https://img.shields.io/docker/cloud/build/d3fk/tailwindcss?label=build%20status&logo=docker)](https://hub.docker.com/r/d3fk/tailwindcss/builds) [![Docker Stars](https://badgen.net/docker/stars/d3fk/tailwindcss?icon=docker&label=stars&color=green)](https://hub.docker.com/r/d3fk/tailwindcss) [![Github Stars](https://img.shields.io/github/stars/Angatar/tailwindcss?label=stars&logo=github&color=green)](https://github.com/Angatar/tailwindcss) [![Github forks](https://img.shields.io/github/forks/Angatar/tailwindcss?logo=github)](https://github.com/Angatar/tailwindcss/fork) [![Github open issues](https://img.shields.io/github/issues-raw/Angatar/tailwindcss?logo=github&color=yellow)](https://github.com/Angatar/tailwindcss/issues) [![Github closed issues](https://img.shields.io/github/issues-closed-raw/Angatar/tailwindcss?logo=github&color=green)](https://github.com/Angatar/tailwindcss/issues?q=is%3Aissue+is%3Aclosed) [![GitHub license](https://img.shields.io/github/license/Angatar/tailwindcss)](https://github.com/Angatar/tailwindcss/blob/master/LICENSE)
 
 # Tailwind CSS (Angatar> d3fk/tailwindcss)
-Tiny container from scratch, with Tailwind CSS CLI only, that can help any project to make use of the Tailwind CSS Framework without requiring Node.js nor npm
+Tiny container image that only contains Tailwind CSS CLI official binaries (downloaded from github official repository in an Alpine container and poured into SCRATCH).
+The d3fk/tailwindcss containers will help any project to make use of the Tailwind CSS Framework without requiring Node.js nor npm
 
 
 ## Docker image
 
-Pre-build as multi-arch image from Docker hub with "automated build" option.
+Pre-build as multi-arch image from Docker hub with "automated build" option on the source repository.
 
 - image name: **d3fk/tailwindcss**
 
@@ -14,7 +15,7 @@ Pre-build as multi-arch image from Docker hub with "automated build" option.
 
 Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
-[![DockerHub Badge](https://lucky-red-wombat.cyclic.app/image/d3fk/tailwindcss)](https://hub.docker.com/r/d3fk/tailwindcss)
+[![DockerHub Badge](https://lucky-red-wombat.cyclic.app/image/d3fk/tailwindcss?)](https://hub.docker.com/r/d3fk/tailwindcss)
 
 
 ### Image TAGS
@@ -30,11 +31,11 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 #### --- Latest ---
 
-- **d3fk/tailwindcss:latest** tag provides you with the last version of tailwindcss available: the container is rebuild on a regular basis.
+- **d3fk/tailwindcss:latest** tag provides you with the last version of tailwindcss available: the container is rebuilt on a regular basis.
 
 #### --- Stable ---
 
-- **d3fk/tailwindcss:stable** tag provides you with a fixed version of tailwind CSS (v3.3.2). The container won't be rebuild to **avoid any possible change** in its behaviour.
+- **d3fk/tailwindcss:stable** tag provides you with a fixed version of tailwind CSS (v3.3.2). The container won't be rebuilt to **avoid any possible change** in its behaviour.
 
 ## Basic usage
 
