@@ -53,14 +53,14 @@ The container has `/project` for default `WORKDIR` so that the `SRC_PATH`(for yo
 As the files of the project are mounted into the container the `--poll` option has to be used in combination with the `--watch` option to make the container watch properly (by polling instead of using filesystem events) for any change in your source files that would require the output of your tailwind css file to be rebuilt.
 
 ```sh
-docker run --rm -d --name tailwindcss-builder -v $(pwd)/YOUR_PROJECT_DIR:/project \
+docker run --rm -id --name tailwindcss-builder -v $(pwd)/YOUR_PROJECT_DIR:/project \
        d3fk/tailwindcss \
        -i SRC_PATH/tailwind-input.css \
        -o CSS_PATH/tailwind-output.css \
        --poll --watch
 ```
 
-Note: we are suggesting to use `docker run -d` to let it watch in background so that you can still use your current console and watch the build processes with `docker logs tailwindcss-builder` .You can then stop & remove (`--rm`) the container with `docker stop tailwindcss-builder`
+Note: we are suggesting to use `docker run -id` to let it watch in background (the -i option makes it hanging to stdout and -d is detaching the container) so that you can still use your current console and watch the build processes with `docker logs tailwindcss-builder` .You can then stop & remove (`--rm`) the container with `docker stop tailwindcss-builder`
 
 
 ## Optimizing for Production
