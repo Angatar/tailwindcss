@@ -15,7 +15,7 @@ Pre-build as multi-arch image from Docker hub with "automated build" option on t
 
 Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
-[![DockerHub Badge](https://lucky-red-wombat.cyclic.app/image/d3fk/tailwindcss?)](https://hub.docker.com/r/d3fk/tailwindcss)
+[![DockerHub Badge](https://dockeri.co/image/d3fk/tailwindcss)](https://hub.docker.com/r/d3fk/tailwindcss)
 
 
 ### Image TAGS
