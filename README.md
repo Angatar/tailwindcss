@@ -20,7 +20,7 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 ### Image TAGS
 
-***"d3fk/tailwindcss:latest" and "d3fk/tailwindcss:stable" are both provided as multi-arch images.***
+***"d3fk/tailwindcss" images are provided as multi-arch images.***
 
 *These multi-arch images will fit with the following architectures:*
 
@@ -33,9 +33,43 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 - **d3fk/tailwindcss:latest** tag provides you with the last version of tailwindcss available: this container image is rebuilt on a regular basis.
 
+
+* This image tag is provided for the following architectures:*
+- *linux/amd64*
+- *linux/arm64/v8*
+
+### --- v4.x.x ---
+Tailwind css v4 is the current version and we will provide some stable versions accross history to **prevent any possible change** that can occurs in behaviours with version upgrading.
+The following stable tags are available, the name of the tag correspond to the Tailwind CSS version as a fixed version and won't be rebuild:
+
+- **d3fk/tailwindcss:v4.0.9** tag provides you with a stable version of the tailwind CSS v4.0.9
+  
+* These image tags are provided for the following architectures:*
+- *linux/amd64*
+- *linux/arm64/v8*
+- 
+#### --- v3---
+- **d3fk/tailwindcss:v3** tag provides you with a stable version of the last tailwind CSS v3 (3.4.17) before v4 release: this container:stable image exists to avoid breaking changes and won't be rebuilt to **avoid any possible change** in its behaviour.
+*This multi-arch images will fit with the following architectures:*
+- *linux/amd64*
+- *linux/arm/v6*
+- *linux/arm/v7*
+- *linux/arm64/v8*
+
 #### --- Stable ---
 
-- **d3fk/tailwindcss:stable** tag provides you with a fixed version of tailwind CSS (v3.3.2): this container:stable image won't be rebuilt to **avoid any possible change** in its behaviour.
+- **d3fk/tailwindcss:stable** tag provides you with our historical stable version having a fixed version of tailwind CSS (v3.3.2): this container:stable image exists to avoid breaking changes and won't be rebuilt to **avoid any possible change** in its behaviour.
+
+*This image tag is provided for the following architectures:*
+- *linux/amd64*
+- *linux/arm/v6*
+- *linux/arm/v7*
+- *linux/arm64/v8*
+
+## Breaking Changes from v3 to v4
+
+- **Tailwind CSS v4** introduces several breaking changes, including updates in configuration and renaming of utilities.
+- Ensure to review the [official migration guide](https://tailwindcss.com/docs/upgrading-to-v4) for detailed instructions on how to upgrade from v3 to v4.
 
 ## Basic usage
 
