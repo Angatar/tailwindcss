@@ -33,8 +33,7 @@ Docker hub repository: https://hub.docker.com/r/d3fk/tailwindcss/
 
 - **d3fk/tailwindcss:latest** tag provides you with the latest version of tailwindcss available: this container image is rebuilt on a regular basis.
 
-
-* This image tag is provided for the following architectures:*
+*This image tag is provided for the following architectures:*
 - *linux/amd64*
 - *linux/arm64/v8*
 
@@ -44,12 +43,13 @@ The following stable tags are available, the name of the tag correspond to the T
 
 - **d3fk/tailwindcss:v4.0.9** tag provides you with a stable version of the tailwind CSS v4.0.9
   
-* These image tags are provided for the following architectures:*
+*These image tags are provided for the following architectures:*
 - *linux/amd64*
 - *linux/arm64/v8*
 - 
 #### --- v3---
 - **d3fk/tailwindcss:v3** tag provides you with a stable version of the last tailwind CSS v3 (3.4.17) before v4 release: this container:stable image exists to avoid breaking changes and won't be rebuilt to **avoid any possible change** in its behaviour.
+
 *This multi-arch image will fit with the following architectures:*
 - *linux/amd64*
 - *linux/arm/v6*
@@ -69,7 +69,7 @@ The following stable tags are available, the name of the tag correspond to the T
 ## Breaking Changes from v3 to v4
 
 - **Tailwind CSS v4** introduces several breaking changes, including updates in configuration and renaming of utilities.
-- Ensure to review the [official migration guide](https://tailwindcss.com/docs/upgrading-to-v4) for detailed instructions on how to upgrade from v3 to v4.
+- Ensure to review the [official migration guide](https://tailwindcss.com/docs/upgrade-guide#changes-from-v3) for detailed instructions on how to upgrade from v3 to v4.
 
 ## Basic usage
 
